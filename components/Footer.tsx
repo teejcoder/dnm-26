@@ -20,10 +20,10 @@ export default function Footer() {
             <span>© {new Date().getFullYear()} Denim. Crafted with</span>
             <motion.div
               animate={{
-                scale: [1, 1.2, 1],
+                scale: [1, 1.1, 1], // Reduced range
               }}
               transition={{
-                duration: 1,
+                duration: 3, // Increased duration
                 repeat: Infinity,
                 ease: "easeInOut",
               }}

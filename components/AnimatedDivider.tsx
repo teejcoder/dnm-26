@@ -20,14 +20,14 @@ export default function AnimatedDivider() {
         animate={{
           boxShadow: [
             "0 0 0 0 rgba(254, 1, 154, 0.7)",
-            "0 0 0 10px rgba(254, 1, 154, 0)",
+            "0 0 0 6px rgba(254, 1, 154, 0)", // Reduced from 10px to 6px
           ],
         }}
         transition={{
           delay: 0.5,
           duration: 0.5,
           boxShadow: {
-            duration: 2,
+            duration: 3, // Increased from 2 to 3 seconds
             repeat: Infinity,
             ease: "easeInOut",
           },

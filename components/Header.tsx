@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -14,28 +14,34 @@ const navItems = [
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("hero");
+  const observerRef = useRef<IntersectionObserver | null>(null);
   const { scrollY } = useScroll();
   const headerOpacity = useTransform(scrollY, [0, 100], [0.8, 1]);
   const headerBlur = useTransform(scrollY, [0, 100], [0, 20]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+    // Throttle scroll updates to reduce memory usage
+    const updateActiveSection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    observerRef.current = new IntersectionObserver(updateActiveSection, {
+      threshold: 0.3,
+      rootMargin: "-50% 0px -50% 0px", // Only trigger when section is in center
+    });
 
     navItems.forEach((item) => {
       const element = document.querySelector(item.href);
-      if (element) observer.observe(element);
+      if (element) observerRef.current?.observe(element);
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observerRef.current?.disconnect();
+    };
   }, []);
 
   return (

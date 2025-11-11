@@ -31,7 +31,10 @@
     --radius: 0.5rem;
   }
 }
-
+::selection {
+  background-color: hsl(var(--chart-3));
+  color: hsl(var(--chart-1));
+}
 @layer base {
   * {
     @apply border-border;

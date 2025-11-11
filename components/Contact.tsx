@@ -13,16 +13,16 @@ const socialLinks = [
 export default function Contact() {
   return (
     <section id="contact" className="relative py-32 px-6 md:px-8 overflow-hidden">
-      {/* Background Effects */}
+      {/* Background Effects - Reduced animation intensity */}
       <div className="absolute inset-0">
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.1, 1], // Reduced range
+            opacity: [0.3, 0.4, 0.3], // Reduced range
           }}
           transition={{
-            duration: 8,
+            duration: 12, // Increased duration
             repeat: Infinity,
             ease: "easeInOut",
           }}

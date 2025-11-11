@@ -40,7 +40,7 @@ export default function TechStackMarquee() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 20,
+                duration: 30, // Increased from 20 to 30 seconds
                 ease: "linear",
               },
             }}

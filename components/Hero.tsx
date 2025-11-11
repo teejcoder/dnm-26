@@ -4,28 +4,19 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-const floatingAnimation = {
-  y: [0, -20, 0],
-  transition: {
-    duration: 6,
-    repeat: Infinity,
-    ease: "easeInOut",
-  },
-};
-
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated Background */}
+      {/* Animated Background - Reduced complexity */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.1, 1], // Reduced range
+            opacity: [0.3, 0.4, 0.3], // Reduced range
           }}
           transition={{
-            duration: 8,
+            duration: 12, // Increased duration to reduce CPU usage
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -33,11 +24,11 @@ export default function Hero() {
         <motion.div
           className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl"
           animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.5, 0.3],
+            scale: [1.1, 1, 1.1], // Reduced range
+            opacity: [0.3, 0.4, 0.3], // Reduced range
           }}
           transition={{
-            duration: 10,
+            duration: 15, // Increased duration
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -114,28 +105,37 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Floating Elements */}
+        {/* Floating Elements - Reduced to 2 elements and less aggressive animation */}
         <motion.div
-          animate={floatingAnimation}
+          animate={{
+            y: [0, -10, 0], // Reduced movement
+            transition: {
+              duration: 8, // Increased duration
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
           className="absolute top-1/4 left-10 hidden lg:block"
         >
           <div className="w-3 h-3 bg-primary rounded-full shadow-lg shadow-primary/50" />
         </motion.div>
         <motion.div
-          animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } }}
+          animate={{
+            y: [0, -8, 0], // Reduced movement
+            transition: {
+              duration: 10, // Increased duration
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2, // Staggered start
+            },
+          }}
           className="absolute top-1/3 right-20 hidden lg:block"
         >
           <div className="w-2 h-2 bg-secondary rounded-full shadow-lg shadow-secondary/50" />
         </motion.div>
-        <motion.div
-          animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 2 } }}
-          className="absolute bottom-1/4 left-1/4 hidden lg:block"
-        >
-          <div className="w-4 h-4 bg-primary rounded-full shadow-lg shadow-primary/50" />
-        </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Reduced animation frequency */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -143,8 +143,8 @@ export default function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          animate={{ y: [0, 8, 0] }} // Reduced movement
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} // Increased duration
           className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
         >
           <motion.div className="w-1.5 h-1.5 bg-white rounded-full" />
