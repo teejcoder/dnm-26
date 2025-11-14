@@ -6,14 +6,20 @@ import { Code2, Rocket, Zap, Layout, Database, Cog } from "lucide-react";
 const features = [
   {
     icon: Layout,
-    title: "Web Apps",
-    description: "Lightning-fast, responsive web applications built with modern frameworks and best practices.",
+    title: "Web Development",
+    description: "User-centric & performance optimised websites built with modern frameworks.",
     color: "from-primary to-pink-500",
+  },
+    {
+    icon: Code2,
+    title: "App Development",
+    description: "Engaging mobile apps for iOS and Android.",
+    color: "from-purple-500 to-pink-500",
   },
   {
     icon: Rocket,
-    title: "SaaS Products",
-    description: "Full-stack SaaS solutions from concept to launch, with scalability baked in from day one.",
+    title: "Minimum Viable Products",
+    description: "Plan, design, and launch your MVP. Rapid development to validate ideas quickly.",
     color: "from-secondary to-yellow-400",
   },
   {
@@ -21,12 +27,6 @@ const features = [
     title: "Automation",
     description: "Smart workflows and integrations that save time and eliminate repetitive tasks.",
     color: "from-blue-500 to-cyan-400",
-  },
-  {
-    icon: Code2,
-    title: "Custom Development",
-    description: "Bespoke solutions tailored to your unique business needs and challenges.",
-    color: "from-purple-500 to-pink-500",
   },
   {
     icon: Database,
@@ -82,7 +82,7 @@ export default function Features() {
             What we <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">build</span>
           </h2>
           <p className="text-xl text-white/70 font-light max-w-2xl mx-auto">
-            From concept to deployment, we craft digital experiences that scale.
+            From concept to deployment, we build products designed to scale.
           </p>
         </motion.div>
 

@@ -12,11 +12,11 @@ export default function Hero() {
         <motion.div
           className="absolute top-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
           animate={{
-            scale: [1, 1.1, 1], // Reduced range
-            opacity: [0.3, 0.4, 0.3], // Reduced range
+            scale: [1, 1.1, 1], 
+            opacity: [0.3, 0.4, 0.3], 
           }}
           transition={{
-            duration: 12, // Increased duration to reduce CPU usage
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -24,11 +24,11 @@ export default function Hero() {
         <motion.div
           className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl"
           animate={{
-            scale: [1.1, 1, 1.1], // Reduced range
-            opacity: [0.3, 0.4, 0.3], // Reduced range
+            scale: [1.1, 1, 1.1],
+            opacity: [0.3, 0.4, 0.3], 
           }}
           transition={{
-            duration: 15, // Increased duration
+            duration: 15, 
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -50,7 +50,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"
           >
             <Sparkles className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium text-white/80">Building the future, one line at a time</span>
+            <span className="text-sm font-medium text-white/80">We're a team that loves building things</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -58,24 +58,22 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-none"
+            className="font-heading text-6xl md:text-8xl lg:text-9xl font-bold mb-16 leading-none"
           >
-            <span className="text-white">We build</span>
-            <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-pulse">
-              digital magic
+              Apps. <br/> Websites. <br/> Automations.
             </span>
           </motion.h1>
 
           {/* Subheadline */}
-          <motion.p
+            {/* <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
             className="text-xl md:text-2xl text-white/70 font-light max-w-3xl mx-auto mb-12"
-          >
-            A tech consultancy crafting SaaS products, web apps, and automations that move fast and look impossibly good.
-          </motion.p>
+            >
+            We create digital products that people enjoy using.
+            </motion.p> */}
 
           {/* CTA Buttons */}
           <motion.div
@@ -135,21 +133,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator - Reduced animation frequency */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }} // Reduced movement
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} // Increased duration
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
-        >
-          <motion.div className="w-1.5 h-1.5 bg-white rounded-full" />
-        </motion.div>
-      </motion.div>
+
     </section>
   );
 }

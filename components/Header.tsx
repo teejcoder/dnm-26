@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/Button";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -13,36 +14,10 @@ const navItems = [
 ];
 
 export default function Header() {
-  const [activeSection, setActiveSection] = useState("hero");
-  const observerRef = useRef<IntersectionObserver | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   const headerOpacity = useTransform(scrollY, [0, 100], [0.8, 1]);
   const headerBlur = useTransform(scrollY, [0, 100], [0, 20]);
-
-  useEffect(() => {
-    // Throttle scroll updates to reduce memory usage
-    const updateActiveSection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    observerRef.current = new IntersectionObserver(updateActiveSection, {
-      threshold: 0.3,
-      rootMargin: "-50% 0px -50% 0px", // Only trigger when section is in center
-    });
-
-    navItems.forEach((item) => {
-      const element = document.querySelector(item.href);
-      if (element) observerRef.current?.observe(element);
-    });
-
-    return () => {
-      observerRef.current?.disconnect();
-    };
-  }, []);
 
   return (
     <motion.header
@@ -64,20 +39,61 @@ export default function Header() {
               <li key={item.name}>
                 <a
                   href={item.href}
-                  className={cn(
-                    "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                    activeSection === item.href.slice(1)
-                      ? "bg-primary text-primary-foreground"
-                      : "text-white/70 hover:text-white hover:bg-white/5"
-                  )}
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/70 hover:text-white hover:bg-white/5"
                 >
                   {item.name}
                 </a>
               </li>
             ))}
           </div>
+          <Button
+            className="md:hidden p-2 text-white/70 hover:bg-secondary hover:text-primary transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            variant="ghost"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {isMobileMenuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </Button>
         </ul>
       </nav>
+      
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden mt-2 bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl"
+        >
+          <ul className="flex flex-col gap-2">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-white/70 hover:text-primary hover:bg-secondary"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )}
     </motion.header>
   );
 }
