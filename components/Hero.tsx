@@ -106,9 +106,9 @@ export default function Hero() {
         {/* Floating Elements - Reduced to 2 elements and less aggressive animation */}
         <motion.div
           animate={{
-            y: [0, -10, 0], // Reduced movement
+            y: [0, -10, 0],
             transition: {
-              duration: 8, // Increased duration
+              duration: 8,
               repeat: Infinity,
               ease: "easeInOut",
             },
@@ -119,12 +119,12 @@ export default function Hero() {
         </motion.div>
         <motion.div
           animate={{
-            y: [0, -8, 0], // Reduced movement
+            y: [0, -8, 0], 
             transition: {
-              duration: 10, // Increased duration
+              duration: 10, 
               repeat: Infinity,
               ease: "easeInOut",
-              delay: 2, // Staggered start
+              delay: 2,
             },
           }}
           className="absolute top-1/3 right-20 hidden lg:block"
