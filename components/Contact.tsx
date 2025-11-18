@@ -65,10 +65,10 @@ export default function Contact() {
               Drop us a line
             </h3>
             <a
-              href="mailto:hello@denim.tech"
+              href="mailto:info@denim.agency"
               className="text-2xl font-light text-primary hover:text-secondary transition-colors"
             >
-              hello@denim.tech
+              info@denim.agency
             </a>
           </div>
 
@@ -110,7 +110,7 @@ export default function Contact() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full group"
               asChild
             >
-              <a href="mailto:hello@denim.tech">
+              <a href="mailto:info@denim.agency">
                 Start a conversation
                 <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </a>

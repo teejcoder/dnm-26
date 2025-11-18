@@ -8,6 +8,7 @@ import Showcase from "@/components/Showcase";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import HowWeBuild from "@/components/HowWeBuild";
 
 export default function Home() {
   return (
@@ -15,10 +16,10 @@ export default function Home() {
       <Header />
       <Hero />
       <SocialProof />
-      <AnimatedDivider />
       <Features />
-      <TechStackMarquee />
       <AnimatedDivider />
+      <HowWeBuild />
+      <TechStackMarquee />
       <Showcase />
       <AnimatedDivider />
       <Testimonials />

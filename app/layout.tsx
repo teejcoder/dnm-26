@@ -15,13 +15,13 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-    title: "Denim | Tech Consultancy",
+    title: "Denim | Digital Agency",
     description: "Building SaaS products, web apps, and automations that move fast and look good.",
     keywords: ["tech agency", "web development", "SaaS", "automation", "web apps", "melbourne", "denim", "software solutions", "custom software", "digital transformation", 
         "technology consulting", "startup development", "scalable solutions", "user-centric design"],
     authors: [{ name: "Denim", url: "https://denim.agency" }],
     openGraph: {
-        title: "Denim | Tech Consultancy",
+        title: "Denim | Digital Agency",
         description: "Building SaaS products, web apps, and automations that move fast and look good.",
         url: "https://denim.agency",
         siteName: "Denim",

@@ -50,7 +50,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"
           >
             <Sparkles className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium text-white/80">We're a team that loves building things</span>
+            <span className="text-sm font-medium text-white/80"></span>
           </motion.div>
 
           {/* Main Headline */}
