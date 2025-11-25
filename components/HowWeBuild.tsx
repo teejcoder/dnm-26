@@ -2,38 +2,27 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Separator } from "@/components/ui/separator";
-import { motion } from "framer-motion";
-
 
 export default function HowWeBuild() {
   return (
-    <section id="how-we-build" className="relative py-32 px-6 md:px-8 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent" />
-
-      <div className="container relative z-10 max-w-7xl mx-auto">
+    <section id="how-we-build" className="py-32 px-6 md:px-8 bg-background">
+      <div className="container max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h2 className="font-heading text-5xl md:text-7xl font-bold text-white mb-6">
-            How We <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Build</span>
+        <div className="text-center mb-20">
+          <h2 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6">
+            How We <span className="text-primary">Build</span>
           </h2>
-          <p className="text-xl text-white/70 font-light max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/70 font-light max-w-2xl mx-auto">
             We build with a bias toward modularity, clarity, and long-term maintainability. No vague process
             diagrams—just concrete decisions that make software fast, stable, and pleasant to work on.
           </p>
-        </motion.div>
+        </div>
 
-        <Card className="bg-card/10 border border-card/20 backdrop-blur-sm">
+        <Card className="bg-foreground/5 border border-foreground/10 rounded-none mb-12">
           <CardHeader>
-            <CardTitle className="text-secondary">Architecture Philosophy</CardTitle>
+            <CardTitle className="text-primary font-heading text-2xl">Architecture Philosophy</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 text-muted-foreground">
+          <CardContent className="space-y-4 text-foreground/80">
             <p>
               Next.js is our backbone. Every feature lives as a self-contained module: UI, server logic,
               validation, caching strategy, and tests all in one place. Keeping boundaries tight avoids the
@@ -51,19 +40,19 @@ export default function HowWeBuild() {
         </Card>
 
         <Tabs defaultValue="structure" className="w-full">
-          <TabsList className="grid grid-cols-3 w-full bg-card/20 border border-card/20">
-            <TabsTrigger value="structure">App Structure</TabsTrigger>
-            <TabsTrigger value="api">API Pattern</TabsTrigger>
-            <TabsTrigger value="ui">UI Composition</TabsTrigger>
+          <TabsList className="grid grid-cols-3 w-full bg-foreground/5 border border-foreground/10 rounded-none">
+            <TabsTrigger value="structure" className="data-[state=active]:bg-primary data-[state=active]:text-background rounded-none">App Structure</TabsTrigger>
+            <TabsTrigger value="api" className="data-[state=active]:bg-primary data-[state=active]:text-background rounded-none">API Pattern</TabsTrigger>
+            <TabsTrigger value="ui" className="data-[state=active]:bg-primary data-[state=active]:text-background rounded-none">UI Composition</TabsTrigger>
           </TabsList>
 
           <TabsContent value="structure">
-            <Card className="bg-card/10 border border-card/20 backdrop-blur-sm">
+            <Card className="bg-foreground/5 border border-foreground/10 rounded-none mt-4">
               <CardHeader>
-                <CardTitle className="text-primary">Feature-First Foldering</CardTitle>
+                <CardTitle className="text-primary font-heading">Feature-First Foldering</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="text-sm text-white whitespace-pre-wrap bg-black/40 p-4 rounded-md overflow-x-auto">
+                <pre className="text-sm text-background whitespace-pre-wrap bg-foreground p-4 overflow-x-auto font-mono">
                   {`app/
   dashboard/
     page.tsx
@@ -80,7 +69,7 @@ export default function HowWeBuild() {
     users/
       route.ts`}
                 </pre>
-                <p className="text-muted-foreground mt-4">
+                <p className="text-foreground/70 mt-4">
                   Each feature owns its UI, logic, and schema. You always know where a responsibility lives.
                 </p>
               </CardContent>
@@ -88,12 +77,12 @@ export default function HowWeBuild() {
           </TabsContent>
 
           <TabsContent value="api">
-            <Card className="bg-card/10 border border-card/20 backdrop-blur-sm">
+            <Card className="bg-foreground/5 border border-foreground/10 rounded-none mt-4">
               <CardHeader>
-                <CardTitle className="text-primary">Typed Server Actions</CardTitle>
+                <CardTitle className="text-primary font-heading">Typed Server Actions</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="text-sm text-white whitespace-pre-wrap bg-black/40 p-4 rounded-md overflow-x-auto">
+                <pre className="text-sm text-background whitespace-pre-wrap bg-foreground p-4 overflow-x-auto font-mono">
                   {`// app/api/users/route.ts
 import { NextResponse } from "next/server";
 import { z } from "zod";
@@ -113,7 +102,7 @@ export async function POST(req: Request) {
   return NextResponse.json({ created: true });
 }`}
                 </pre>
-                <p className="text-muted-foreground mt-4">
+                <p className="text-foreground/70 mt-4">
                   Validation stays close to the handler. Everything stays type-safe. No mystery pipes.
                 </p>
               </CardContent>
@@ -121,12 +110,12 @@ export async function POST(req: Request) {
           </TabsContent>
 
           <TabsContent value="ui">
-            <Card className="bg-card/10 border border-card/20 backdrop-blur-sm">
+            <Card className="bg-foreground/5 border border-foreground/10 rounded-none mt-4">
               <CardHeader>
-                <CardTitle className="text-primary">Composable UI</CardTitle>
+                <CardTitle className="text-primary font-heading">Composable UI</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="text-sm text-white whitespace-pre-wrap bg-black/40 p-4 rounded-md overflow-x-auto">
+                <pre className="text-sm text-background whitespace-pre-wrap bg-foreground p-4 overflow-x-auto font-mono">
                   {`// dashboard/components/StatCard.tsx
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -141,7 +130,7 @@ export function StatCard({ label, value }) {
   );
 }`}
                 </pre>
-                <p className="text-muted-foreground mt-4">
+                <p className="text-foreground/70 mt-4">
                   Components stay tiny. Composition scales. No 700-line React monsters.
                 </p>
               </CardContent>

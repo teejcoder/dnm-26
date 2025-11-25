@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
 import { useState } from "react";
 import { Button } from "./ui/Button";
 
@@ -14,39 +13,29 @@ const navItems = [
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { scrollY } = useScroll();
-  const headerOpacity = useTransform(scrollY, [0, 100], [0.8, 1]);
-  const headerBlur = useTransform(scrollY, [0, 100], [0, 20]);
 
   return (
-    <motion.header
-      style={{
-        opacity: headerOpacity,
-        backdropFilter: headerBlur.get() > 0 ? `blur(${headerBlur.get()}px)` : undefined,
-      }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl"
-    >
-      <nav className="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 shadow-2xl">
-        <ul className="flex items-center justify-between gap-2">
-          <li>
-            <a href="#hero" className="font-heading text-xl font-bold text-white hover:text-primary transition-colors">
-              DENIM
-            </a>
-          </li>
-          <div className="hidden md:flex items-center gap-1">
+    <header className="sticky top-0 z-50 w-full bg-background border-b border-foreground/10">
+      <nav className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <a href="#hero" className="font-heading text-2xl font-bold text-foreground hover:text-primary transition-colors">
+            DENIM
+          </a>
+          
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <li key={item.name}>
-                <a
-                  href={item.href}
-                  className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/70 hover:text-white hover:bg-white/5"
-                >
-                  {item.name}
-                </a>
-              </li>
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wide"
+              >
+                {item.name}
+              </a>
             ))}
           </div>
+
           <Button
-            className="md:hidden p-2 text-white/70 hover:bg-secondary hover:text-primary transition-colors"
+            className="md:hidden p-2 text-foreground hover:bg-secondary hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             variant="ghost"
             aria-label="Toggle menu"
@@ -67,32 +56,27 @@ export default function Header() {
               )}
             </svg>
           </Button>
-        </ul>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 py-4 border-t border-foreground/10">
+            <ul className="flex flex-col gap-4">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-lg font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </nav>
-      
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden mt-2 bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl"
-        >
-          <ul className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <a
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-white/70 hover:text-primary hover:bg-secondary"
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      )}
-    </motion.header>
+    </header>
   );
 }

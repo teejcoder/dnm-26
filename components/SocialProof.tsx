@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const companies = [
   "TECHCORP",
   "INNOVATE",
@@ -19,55 +17,39 @@ const stats = [
 
 export default function SocialProof() {
   return (
-    <section className="relative py-20 px-6 md:px-8 overflow-hidden border-y border-white/10">
+    <section className="py-20 px-6 md:px-8 border-y border-foreground/10 bg-background">
       <div className="container max-w-7xl mx-auto">
         {/* Trusted By */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <p className="text-sm text-white/50 uppercase tracking-widest mb-8">
+        <div className="text-center mb-12">
+          <p className="text-sm text-foreground/50 uppercase tracking-widest mb-8 font-bold">
             Trusted by forward-thinking companies
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-12 opacity-50">
+          <div className="flex flex-wrap items-center justify-center gap-12">
             {companies.map((company) => (
-              <motion.div
+              <div
                 key={company}
-                whileHover={{ opacity: 1, scale: 1.05 }}
-                className="font-heading text-xl font-bold text-white/70"
+                className="font-heading text-xl font-bold text-foreground/40 hover:text-foreground transition-colors duration-300 cursor-default"
               >
                 {company}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 border-t border-foreground/10 pt-16">
+          {stats.map((stat) => (
+            <div
               key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="font-heading text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-2">
+              <div className="font-heading text-5xl md:text-6xl font-bold text-primary mb-2">
                 {stat.value}
               </div>
-              <div className="text-white/70 font-light">{stat.label}</div>
-            </motion.div>
+              <div className="text-foreground/70 font-medium uppercase tracking-wide text-sm">{stat.label}</div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

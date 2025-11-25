@@ -58,6 +58,12 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        "lm-teal": "#008982",
+        "lm-off-white": "#F4F2E6",
+        "lm-dark-green": "#01231E",
+        "lm-yellow": "#FEFF5E",
+        "lm-black": "#000000",
+        "lm-white": "#FFFFFF",
       },
       borderRadius: {
         lg: "var(--radius)",

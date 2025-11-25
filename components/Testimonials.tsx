@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import Image from "next/image";
 
@@ -45,66 +44,53 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-32 px-6 md:px-8 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent" />
-
-      <div className="container relative z-10 max-w-7xl mx-auto">
+    <section id="testimonials" className="py-32 px-6 md:px-8 bg-background">
+      <div className="container max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h2 className="font-heading text-5xl md:text-7xl font-bold text-white mb-6">
-            Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">love</span>
+        <div className="text-center mb-20">
+          <h2 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6">
+            Client <span className="text-primary">love</span>
           </h2>
-          <p className="text-xl text-white/70 font-light max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/70 font-light max-w-2xl mx-auto">
             Don&apos;t just take our word for it. Here&apos;s what our clients say.
           </p>
-        </motion.div>
+        </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial) => (
+            <div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300"
+              className="bg-foreground/5 p-8 border border-foreground/10"
             >
               {/* Quote Icon */}
               <Quote className="w-8 h-8 text-primary mb-6" />
 
               {/* Quote */}
-              <p className="text-white/80 font-light leading-relaxed mb-6">
+              <p className="text-foreground/80 font-medium leading-relaxed mb-6 italic">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/50">
+                <div className="relative w-12 h-12 overflow-hidden border border-foreground/20">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale"
                   />
                 </div>
                 <div>
-                  <div className="font-heading font-semibold text-white">
+                  <div className="font-heading font-bold text-foreground">
                     {testimonial.name}
                   </div>
-                  <div className="text-sm text-white/60">
+                  <div className="text-sm text-foreground/60 uppercase tracking-wide">
                     {testimonial.role}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

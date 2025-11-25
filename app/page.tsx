@@ -23,7 +23,6 @@ export default function Home() {
       <Showcase />
       <AnimatedDivider />
       <Testimonials />
-      <AnimatedDivider />
       <Contact />
       <Footer />
     </main>
