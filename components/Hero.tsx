@@ -16,7 +16,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mb-12">
-            We create digital products that people enjoy using.
+            We build digital products and consult on tech solutions. <br/>
             Simple, effective, and built for growth.
           </p>
 
