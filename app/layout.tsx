@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     description: "Building SaaS products, web apps, and automations that move fast and look good.",
     keywords: ["tech agency", "web development", "SaaS", "automation", "web apps", "melbourne", "denim", "software solutions", "custom software", "digital transformation", 
         "technology consulting", "startup development", "scalable solutions", "user-centric design"],
-    authors: [{ name: "Denim", url: "https://denim.agency" }],
+    authors: [{ name: "Denim", url: "https://denim.melbourne" }],
     openGraph: {
-        title: "Denim | Digital Agency",
+        title: "Denim | Digital Tech",
         description: "Building SaaS products, web apps, and automations that move fast and look good.",
-        url: "https://denim.agency",
+        url: "https://denim.melbourne",
         siteName: "Denim",
     },
 };
