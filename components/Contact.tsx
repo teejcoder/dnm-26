@@ -37,7 +37,7 @@ export default function Contact() {
               href="mailto:info@denim.agency"
               className="text-2xl font-light text-primary hover:text-foreground transition-colors"
             >
-              info@denim.agency
+              hello@denim.melbourne
             </a>
           </div>
 
