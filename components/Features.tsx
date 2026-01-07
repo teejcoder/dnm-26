@@ -6,7 +6,7 @@ const features = [
   {
     icon: Layout,
     title: "Web Development",
-    description: "User-centric & performance optimised websites built with modern frameworks.",
+    description: "User-centric & performance optimised websites built with modern frameworks — including web design, hosting, and domains.",
   },
     {
     icon: Code2,
