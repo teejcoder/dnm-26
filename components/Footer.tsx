@@ -1,6 +1,7 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import logo from "@/public/images/logo.png";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,17 +10,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <span className="font-heading text-2xl font-bold text-foreground">DENIM</span>
+            <Image src={logo} alt="Denim Logo" width={80} height={80} />
             <span className="text-foreground/50">|</span>
             <span className="text-foreground/70 text-sm">Tech Consultancy</span>
           </div>
 
           {/* Copyright */}
           <div className="flex items-center gap-2 text-foreground/50 text-sm">
-            <span>© {new Date().getFullYear()} Denim. Crafted with</span>
-            <div>
-              <Heart className="w-4 h-4 text-primary fill-primary" />
-            </div>
+            <span>© {new Date().getFullYear()}</span>
           </div>
         </div>
       </div>

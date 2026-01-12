@@ -5,40 +5,38 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "CEO, TechStart",
-    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
-    quote: "Denim transformed our vision into a product that exceeded all expectations. The attention to detail and speed of delivery was remarkable.",
+    name: "Thanh Vu",
+    role: "Owner | Q Nails",
+    image:
+      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
+    quote:
+      "Denim transformed our vision into a product that exceeded all expectations. The attention to detail and speed of delivery was remarkable.",
   },
   {
-    name: "Marcus Johnson",
-    role: "Founder, AutoMate",
-    image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-    quote: "Working with Denim felt like having a senior tech co-founder. They understood our business and delivered exactly what we needed.",
+    name: "Mark Juan",
+    role: "Owner | Master Cobblers",
+    image:
+      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
+    quote:
+      "Working with Denim felt like having a senior tech co-founder. They understood our business and delivered exactly what we needed.",
   },
   {
-    name: "Elena Rodriguez",
-    role: "Product Lead, DataFlow",
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-    quote: "The best technical partner we've ever worked with. Fast, professional, and always thinking three steps ahead.",
+    name: "Matt Simpson",
+    role: "Owner | Twang Brewing",
+    image:
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+    quote:
+      "The best technical partner we've ever worked with. Fast, professional, and always thinking three steps ahead.",
   },
+
   {
-    name: "James Park",
-    role: "CTO, FinanceHub",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
-    quote: "Denim built our entire platform in record time. The code quality and architecture decisions were exceptional.",
-  },
-  {
-    name: "Aisha Patel",
-    role: "Founder, CreativeSpace",
-    image: "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400",
-    quote: "From concept to launch in 6 weeks. Denim made the impossible possible with incredible design and functionality.",
-  },
-  {
-    name: "Tom Williams",
-    role: "Director, CloudSync",
-    image: "https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg?auto=compress&cs=tinysrgb&w=400",
-    quote: "Outstanding work. They took our complex requirements and delivered a clean, scalable solution that just works.",
+    name: "Kisa Evelyn",
+    role: "Founder | Kish Creates",
+    image:
+      "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400",
+    quote:
+      "From concept to launch in 6 weeks. Denim made the impossible possible with incredible design and functionality.",
   },
 ];
 
@@ -52,12 +50,13 @@ export default function Testimonials() {
             Client <span className="text-primary">love</span>
           </h2>
           <p className="text-xl text-foreground/70 font-light max-w-2xl mx-auto">
-            Don&apos;t just take our word for it. Here&apos;s what our clients say.
+            Don&apos;t just take our word for it. Here&apos;s what our clients
+            say.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}

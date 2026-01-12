@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Button } from "./ui/Button";
+import Image from "next/image";
+import logo from "@/public/images/logo.png";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -18,10 +20,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-background border-b border-foreground/10">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#hero" className="font-heading text-2xl font-bold text-foreground hover:text-primary transition-colors">
-            DENIM
-          </a>
-          
+          <div className="flex items-center gap-2">
+            <Image src={logo} alt="Denim Logo" width={80} height={80} />
+            <span className="text-foreground/50">|</span>
+            <span className="text-foreground/70 text-sm">Tech Consultancy</span>
+          </div>
+
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <a
