@@ -30,7 +30,7 @@ export default function TechStackMarquee() {
           {technologies.map((tech) => (
             <div
               key={tech}
-              className="px-6 py-3 border border-foreground/20 hover:bg-foreground hover:text-background transition-colors duration-300"
+              className="px-6 py-3 border border-foreground/20 hover:bg-primary hover:text-foreground transition-colors duration-300"
             >
               <span className="font-heading font-medium text-lg">
                 {tech}

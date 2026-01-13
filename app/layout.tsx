@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Denim Tech",
+  title: "Denim | Tech Consultancy",
   description:
     "Building MVPs, web apps, and automations that move fast and look good.",
   keywords: [
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     "scalable solutions",
     "user-centric design",
   ],
-  authors: [{ name: "Denim Tech", url: "https://denim.melbourne" }],
+  authors: [{ name: "Denim | Tech Consultancy", url: "https://denim.melbourne" }],
   openGraph: {
-    title: "Denim Tech",
+    title: "Denim | Tech Consultancy",
     description:
       "Building SaaS products, web apps, and automations that move fast and look good.",
     url: "https://denim.melbourne",
-    siteName: "Denim Tech",
+    siteName: "Denim | Tech Consultancy",
   },
 };
 

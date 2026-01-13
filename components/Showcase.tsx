@@ -33,13 +33,13 @@ const projects = [
   {
     title: "Litre & Levy",
     category: "Compliance SaaS",
-    description: "Compliance softeware for the beverage alcohol industry.",
+    description: "Compliance software for the beverage alcohol industry.",
     image: litreAndLevyPng,
   },
   {
     title: "Q Nails",
     category: "Marketing Website",
-    description: "Website for a high-end nail salon in North QLD.",
+    description: "Marketing website for a nail salon.",
     image:
       qnails,
   },
@@ -81,7 +81,7 @@ export default function Showcase() {
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <ExternalLink className="w-12 h-12 text-background" />
+                  <ExternalLink className="w-12 h-12 text-foreground" />
                 </div>
               </div>
 

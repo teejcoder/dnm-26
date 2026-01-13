@@ -14,11 +14,6 @@ export default function Footer() {
             <span className="text-foreground/50">|</span>
             <span className="text-foreground/70 text-sm">Tech Consultancy</span>
           </div>
-
-          {/* Copyright */}
-          <div className="flex items-center gap-2 text-foreground/50 text-sm">
-            <span>© {new Date().getFullYear()}</span>
-          </div>
         </div>
       </div>
     </footer>

@@ -1,11 +1,11 @@
 "use client";
 
-import { Mail, Github, Twitter, Linkedin, Send } from "lucide-react";
+import { Mail, Github, Twitter, Linkedin, Send, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  // { icon: Mail, href: "mailto:hello@denim.melbourne", label: "Email" },
+  { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
@@ -18,7 +18,7 @@ export default function Contact() {
           <h2 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6">
             Let&apos;s build <span className="text-primary">together</span>
           </h2>
-          <p className="text-xl text-foreground/70 font-light max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-foreground/70 text-balance font-light max-w-2xl mx-auto mb-8">
             Have a project in mind? Let&apos;s chat about how we can bring your vision to life.
           </p>
         </div>
@@ -28,19 +28,21 @@ export default function Contact() {
           {/* Email CTA */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6">
-              <Mail className="w-10 h-10 text-background" />
+              <Mail className="w-10 h-10 text-foreground" />
             </div>
             <h3 className="font-heading text-3xl font-bold text-foreground mb-4">
               Drop us a line
             </h3>
             <a
-              href="mailto:info@denim.agency"
+              href="mailto:hello@denim.melbourne"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-2xl font-light text-primary hover:text-foreground transition-colors"
             >
               hello@denim.melbourne
             </a>
           </div>
-
+    
           {/* Divider */}
           <div className="relative mb-12">
             <div className="absolute inset-0 flex items-center">
@@ -57,7 +59,7 @@ export default function Contact() {
               <a
                 key={social.label}
                 href={social.href}
-                className="flex items-center justify-center w-14 h-14 bg-foreground/5 border border-foreground/10 rounded-full hover:bg-foreground hover:text-background transition-all duration-300"
+                className="flex items-center justify-center w-14 h-14 bg-foreground/5 border border-foreground/10 rounded-full hover:bg-primary hover:text-foreground transition-all duration-300"
                 aria-label={social.label}
               >
                 <social.icon className="w-6 h-6" />
@@ -69,10 +71,10 @@ export default function Contact() {
           <div className="mt-12 text-center">
             <Button
               size="lg"
-              className="bg-foreground hover:bg-foreground/90 text-background font-semibold px-10 py-6 text-lg rounded-none"
+              className="bg-foreground hover:bg-primary hover:text-foreground text-background font-semibold px-10 py-6 text-lg rounded-none"
               asChild
             >
-              <a href="mailto:info@denim.agency">
+              <a href="mailto:hello@denim.melbourne" target="_blank" rel="noopener noreferrer">
                 Start a conversation
                 <Send className="ml-2 w-5 h-5" />
               </a>

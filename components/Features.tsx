@@ -6,7 +6,7 @@ const features = [
   {
     icon: Layout,
     title: "Web Development",
-    description: "Web Design, Web Development, E-commerce, hosting, domains, and maintenance.",
+    description: "Web Design, Web Development, E-commerce, Web Hosting, Domain Registration, Support & Maintenance.",
   },
     {
     icon: Code2,
@@ -54,7 +54,7 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group relative bg-background p-12 hover:bg-foreground/5 transition-colors duration-300"
+              className="group relative bg-background p-12 hover:bg-primary/10 transition-colors duration-300"
             >
               <div className="relative z-10">
                 {/* Icon */}

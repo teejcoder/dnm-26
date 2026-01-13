@@ -14,8 +14,8 @@ export default function HowWeBuild() {
           </h2>
           <p className="text-xl text-balance text-foreground/70 font-light max-w-2xl mx-auto">
             We build with a bias toward modularity, clarity, and long-term
-            maintainability. No vague process diagrams—just concrete decisions
-            that make software fast, stable, and pleasant to work on.
+            maintainability. Decisions that make software fast, stable,
+            and pleasant to work on.
           </p>
         </div>
 
@@ -34,8 +34,8 @@ export default function HowWeBuild() {
             </p>
             <p>
               We avoid brittle abstractions by sticking to a simple rule: if an
-              abstraction doesn’t remove cognitive load, it’s not an
-              abstraction—it’s a future bug.
+              abstraction doesn&apos;t remove cognitive load, it&apos;s not an
+              abstraction, it&apos;s a future bug.
             </p>
             <p>
               Performance budgets matter. We treat them like gravity: always
@@ -114,7 +114,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 const UserSchema = z.object({
-  email: z.string().email(),
+  email: z.email(),
   name: z.string().min(2)
 });
 
