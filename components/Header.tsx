@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "./ui/Button";
 import Image from "next/image";
-import logo from "@/public/images/logo.png";
+import logo from "@/public/images/logo-bw.png";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -22,8 +22,8 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image src={logo} alt="Denim Logo" width={80} height={80} />
-            <span className="text-foreground/50">|</span>
-            <span className="text-foreground/70 text-sm">Tech Consultancy</span>
+            <span className="text-foreground">|</span>
+            <span className="text-foreground text-sm">Tech Consultancy</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -31,7 +31,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wide"
+                className="text-sm font-medium text-foreground hover:text-foreground transition-colors uppercase tracking-wide"
               >
                 {item.name}
               </a>

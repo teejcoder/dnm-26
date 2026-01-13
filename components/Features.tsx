@@ -6,12 +6,12 @@ const features = [
   {
     icon: Layout,
     title: "Web Development",
-    description: "User-centric & performance optimised websites built with modern frameworks — including web design, hosting, and domains.",
+    description: "Web Design, Web Development, E-commerce, hosting, domains, and maintenance.",
   },
     {
     icon: Code2,
     title: "App Development",
-    description: "Engaging mobile apps for iOS and Android.",
+    description: "Cross-platform mobile apps for iOS and Android.",
   },
   {
     icon: Rocket,
