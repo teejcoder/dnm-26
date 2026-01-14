@@ -15,7 +15,7 @@ export default function Home() {
     <main className="relative min-h-screen">
       <Header />
       <Hero />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <Features />
       <AnimatedDivider />
       <HowWeBuild />

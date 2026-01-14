@@ -14,7 +14,6 @@ const technologies = [
   "Docker",
   "GraphQL",
   "Prisma",
-  "tRPC",
   "Supabase",
 ];
 

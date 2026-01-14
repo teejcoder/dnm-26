@@ -29,13 +29,11 @@ export default function HowWeBuild() {
             <p>
               Next.js is our backbone. Every feature lives as a self-contained
               module: UI, server logic, validation, caching strategy, and tests
-              all in one place. Keeping boundaries tight avoids the spaghetti
-              death-spiral.
+              all in one place.
             </p>
             <p>
               We avoid brittle abstractions by sticking to a simple rule: if an
-              abstraction doesn&apos;t remove cognitive load, it&apos;s not an
-              abstraction, it&apos;s a future bug.
+              abstraction doesn&apos;t remove cognitive load, it&apos;s a future bug.
             </p>
             <p>
               Performance budgets matter. We treat them like gravity: always
@@ -160,8 +158,8 @@ export function StatCard({ label, value }) {
 }`}
                 </pre>
                 <p className="text-foreground/70 mt-4">
-                  Components stay tiny. Composition scales. No 700-line React
-                  monsters.
+                  Components stay tiny. Composition scales. Reuse happens
+                  naturally.
                 </p>
               </CardContent>
             </Card>
