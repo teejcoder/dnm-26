@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import SocialProof from "@/components/SocialProof";
 import AnimatedDivider from "@/components/AnimatedDivider";
 import Features from "@/components/Features";
 import TechStackMarquee from "@/components/TechStackMarquee";

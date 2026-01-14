@@ -34,13 +34,25 @@ export const metadata: Metadata = {
     "scalable solutions",
     "user-centric design",
   ],
-  authors: [{ name: "Denim | Tech Consultancy", url: "https://denim.melbourne" }],
+  authors: [
+    { name: "Denim | Tech Consultancy", url: "https://denim.melbourne" },
+  ],
   openGraph: {
     title: "Denim | Tech Consultancy",
     description:
-      "Building SaaS products, web apps, and automations that move fast and look good.",
+      "Tech Consultants building products, web apps, and automations that move fast and look good.",
     url: "https://denim.melbourne",
     siteName: "Denim | Tech Consultancy",
+    images: [
+      {
+        url: "https://denim.melbourne/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Denim | Tech Consultancy",
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
   },
 };
 
@@ -52,6 +64,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://denim.melbourne" />
+        <meta property="og:site_name" content="Denim | Tech Consultancy" />
+        <meta property="og:title" content="Denim | Tech Consultancy" />
+        <meta property="og:description" content="Tech Consultants building products, web apps, and automations that move fast and look good." />
+        <meta property="og:image" content="https://denim.melbourne/og.png" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
