@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     "automation",
     "web apps",
     "melbourne",
+    "melboure tech",
+    "melbourne software solutions",
+    "melbourne web development",
     "denim",
     "software solutions",
     "custom software",
@@ -34,6 +38,9 @@ export const metadata: Metadata = {
     "scalable solutions",
     "user-centric design",
   ],
+  icons: {
+    icon: "/favicon.ico",
+  },
   authors: [
     { name: "Denim | Tech Consultancy", url: "https://denim.melbourne" },
   ],
@@ -63,19 +70,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://denim.melbourne" />
-        <meta property="og:site_name" content="Denim | Tech Consultancy" />
-        <meta property="og:title" content="Denim | Tech Consultancy" />
-        <meta property="og:description" content="Tech Consultants building products, web apps, and automations that move fast and look good." />
-        <meta property="og:image" content="https://denim.melbourne/og.png" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased scroll-smooth`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
