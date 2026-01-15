@@ -47,19 +47,19 @@ export default function HowWeBuild() {
           <TabsList className="grid grid-cols-3 w-full bg-foreground/5 border border-foreground/10 rounded-none">
             <TabsTrigger
               value="structure"
-              className="data-[state=active]:bg-primary data-[state=active]:text-background rounded-none"
+              className="data-[state=active]:bg-primary text-s data-[state=active]:text-background rounded-none text-xs sm:text-sm"
             >
               App Structure
             </TabsTrigger>
             <TabsTrigger
               value="api"
-              className="data-[state=active]:bg-primary data-[state=active]:text-background rounded-none"
+              className="data-[state=active]:bg-primary data-[state=active]:text-background rounded-none text-xs sm:text-sm"
             >
               API Pattern
             </TabsTrigger>
             <TabsTrigger
               value="ui"
-              className="data-[state=active]:bg-primary data-[state=active]:text-background rounded-none"
+              className="data-[state=active]:bg-primary data-[state=active]:text-background rounded-none text-xs sm:text-sm"
             >
               UI Composition
             </TabsTrigger>

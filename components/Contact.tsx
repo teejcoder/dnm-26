@@ -37,7 +37,7 @@ export default function Contact() {
               href="mailto:hello@denim.melbourne"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl font-light text-primary hover:text-foreground transition-colors"
+              className="text-md md:text-xl font-light text-primary hover:text-foreground transition-colors"
             >
               hello@denim.melbourne
             </a>
@@ -71,12 +71,12 @@ export default function Contact() {
           <div className="mt-12 text-center">
             <Button
               size="lg"
-              className="bg-foreground hover:bg-primary hover:text-foreground text-background font-semibold px-10 py-6 text-lg rounded-none"
+              className="bg-foreground hover:bg-primary hover:text-foreground text-background font-semibold px-6 md:px-10 py-4 md:py-6 text-base md:text-lg rounded-none w-full sm:w-auto"
               asChild
             >
               <a href="mailto:hello@denim.melbourne" target="_blank" rel="noopener noreferrer">
                 Start a conversation
-                <Send className="ml-2 w-5 h-5" />
+                <Send className="ml-2 w-4 h-4 md:w-5 md:h-5" />
               </a>
             </Button>
           </div>
