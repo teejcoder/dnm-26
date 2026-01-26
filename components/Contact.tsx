@@ -4,9 +4,9 @@ import { Mail, Github, Twitter, Linkedin, Send, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 // const socialLinks = [
-  // { icon: Mail, href: "mailto:hello@denim.melbourne", label: "Email" },
-  // { icon: Instagram, href: "#", label: "Instagram" },
-  // { icon: Linkedin, href: "#", label: "LinkedIn" },
+// { icon: Mail, href: "mailto:hello@denim.melbourne", label: "Email" },
+// { icon: Instagram, href: "#", label: "Instagram" },
+// { icon: Linkedin, href: "#", label: "LinkedIn" },
 // ];
 
 export default function Contact() {
@@ -19,7 +19,8 @@ export default function Contact() {
             Let&apos;s build <span className="text-primary">together</span>
           </h2>
           <p className="text-xl text-foreground/70 text-balance font-light max-w-2xl mx-auto mb-8">
-            Have a project in mind? Let&apos;s chat about how we can bring your vision to life.
+            Have a project in mind? Let&apos;s chat about how we can bring your
+            vision to life.
           </p>
         </div>
 
@@ -35,13 +36,12 @@ export default function Contact() {
             </h3>
             <a
               href="mailto:hello@denim.melbourne"
-              target="_blank"
               className="text-md md:text-xl font-light text-primary hover:text-foreground transition-colors"
             >
               hello@denim.melbourne
             </a>
           </div>
-    
+
           {/* Divider */}
           {/* <div className="relative mb-12">
             <div className="absolute inset-0 flex items-center">
@@ -75,7 +75,6 @@ export default function Contact() {
             >
               <a
                 href="mailto:hello@denim.melbourne?subject=Let%27s%20build%20together&body=Hi%2C%0A%0AI%20have%20a%20project%20I%27d%20like%20to%20discuss.%20Briefly%20describe%20it%20here...%0A%0AThanks%2C"
-                target="_blank"
                 className="inline-flex items-center"
               >
                 Send an Email
