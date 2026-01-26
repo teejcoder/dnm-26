@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-foreground/10 py-12 px-6 md:px-8 bg-background">
       <div className="container max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
           {/* Brand */}
           <div className="flex items-center gap-2">
             <Image src={logo} alt="Denim Logo" width={80} height={80} />

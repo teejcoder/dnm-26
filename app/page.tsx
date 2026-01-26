@@ -14,13 +14,11 @@ export default function Home() {
     <main className="relative min-h-screen">
       <Header />
       <Hero />
-      {/* <SocialProof /> */}
       <Features />
+      <Showcase />
       <AnimatedDivider />
       <HowWeBuild />
       <TechStackMarquee />
-      <Showcase />
-      <AnimatedDivider />
       <Testimonials />
       <Contact />
       <Footer />

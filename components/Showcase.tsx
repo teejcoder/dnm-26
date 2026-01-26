@@ -11,44 +11,48 @@ import cfss from "@/public/images/cf-sss.png";
 
 const projects = [
   {
-    title: "Togetherish",
-    category: "SaaS Platform",
-    description:
-      "Collaborative platform for remote teams to work together seamlessly.",
-    image: togetherishPng,
+    title: "Q Nails",
+    category: "Marketing Website",
+    href: "https://qnails.com.au",
+    description: "Marketing website for a nail salon.",
+    image: qnails,
   },
   {
     title: "Master Cobblers",
     category: "Marketing Website",
+    href: "https://mastercobblers.com.au",
     description: "Marketing website for a premium cobbler service.",
     image: mc,
   },
   {
     title: "Swash Agency",
     category: "Marketing Website",
+    href: "https://swashagency.vercel.app",
     description:
       "Website for a booking agency specialising in performance artists.",
     image: swashPng,
   },
   {
-    title: "Litre & Levy",
-    category: "Compliance SaaS",
-    description: "Compliance software for the beverage alcohol industry.",
-    image: litreAndLevyPng,
-  },
-  {
-    title: "Q Nails",
-    category: "Marketing Website",
-    description: "Marketing website for a nail salon.",
-    image:
-      qnails,
-  },
-  {
     title: "Colourfully",
     category: "AI Design Tool",
+    href: "https://colourfully.vercel.app",
     description: "Colour Palette generator using AI to inspire designers.",
-    image:
-    cfss,
+    image: cfss,
+  },
+  {
+    title: "Togetherish",
+    category: "SaaS Platform",
+    href: "https://togetherish.io",
+    description:
+      "Collaborative platform for remote teams to work together seamlessly.",
+    image: togetherishPng,
+  },
+  {
+    title: "Litre & Levy",
+    category: "Compliance SaaS",
+    href: "https://litreandlevy.vercel.app",
+    description: "Compliance software for the beverage alcohol industry.",
+    image: litreAndLevyPng,
   },
 ];
 
@@ -80,9 +84,15 @@ export default function Showcase() {
                 />
 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <ExternalLink className="w-12 h-12 text-foreground" />
-                </div>
+                <a
+                  href={project.href}
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <ExternalLink className="w-12 h-12 text-foreground" />
+                  </div>
+                </a>
               </div>
 
               {/* Content */}

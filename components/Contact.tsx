@@ -3,11 +3,11 @@
 import { Mail, Github, Twitter, Linkedin, Send, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-const socialLinks = [
+// const socialLinks = [
   // { icon: Mail, href: "mailto:hello@denim.melbourne", label: "Email" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-];
+  // { icon: Instagram, href: "#", label: "Instagram" },
+  // { icon: Linkedin, href: "#", label: "LinkedIn" },
+// ];
 
 export default function Contact() {
   return (
@@ -36,7 +36,6 @@ export default function Contact() {
             <a
               href="mailto:hello@denim.melbourne"
               target="_blank"
-              rel="noopener noreferrer"
               className="text-md md:text-xl font-light text-primary hover:text-foreground transition-colors"
             >
               hello@denim.melbourne
@@ -44,17 +43,17 @@ export default function Contact() {
           </div>
     
           {/* Divider */}
-          <div className="relative mb-12">
+          {/* <div className="relative mb-12">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-foreground/10"></div>
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-4 bg-background text-foreground/50">or reach out on social</span>
             </div>
-          </div>
+          </div> */}
 
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-4">
+          {/* <div className="flex items-center justify-center gap-4">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -65,7 +64,7 @@ export default function Contact() {
                 <social.icon className="w-6 h-6" />
               </a>
             ))}
-          </div>
+          </div> */}
 
           {/* Alternative CTA */}
           <div className="mt-12 text-center">
@@ -74,8 +73,12 @@ export default function Contact() {
               className="bg-foreground hover:bg-primary hover:text-foreground text-background font-semibold px-6 md:px-10 py-4 md:py-6 text-base md:text-lg rounded-none w-full sm:w-auto"
               asChild
             >
-              <a href="mailto:hello@denim.melbourne" target="_blank" rel="noopener noreferrer">
-                Start a conversation
+              <a
+                href="mailto:hello@denim.melbourne?subject=Let%27s%20build%20together&body=Hi%2C%0A%0AI%20have%20a%20project%20I%27d%20like%20to%20discuss.%20Briefly%20describe%20it%20here...%0A%0AThanks%2C"
+                target="_blank"
+                className="inline-flex items-center"
+              >
+                Send an Email
                 <Send className="ml-2 w-4 h-4 md:w-5 md:h-5" />
               </a>
             </Button>
