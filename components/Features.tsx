@@ -1,37 +1,73 @@
 "use client";
 
-import { Code2, Rocket, Zap, Layout, Database, Cog } from "lucide-react";
+import { Rocket, Zap, Layout, Database, Cog, Check, Wrench } from "lucide-react";
 
 const features = [
   {
     icon: Layout,
-    title: "Web Development",
-    description: "Web Design, Web Development, E-commerce, Web Hosting, Domain Registration, Support & Maintenance.",
-  },
-    {
-    icon: Code2,
-    title: "App Development",
-    description: "Cross-platform mobile apps for iOS and Android.",
+    title: "Web & App Development",
+    description: [
+      "Web Design & Development",
+      "E-commerce Solutions",
+      "Cross-platform Mobile Apps (iOS & Android)",
+      "Web Hosting & Domain Registration",
+      "Support & Maintenance",
+    ],
   },
   {
     icon: Rocket,
     title: "Minimum Viable Products",
-    description: "Plan, design, and launch your MVP. Rapid development to validate ideas quickly.",
+    description: [
+      "Plan, design, and launch your MVP",
+      "Rapid development to validate ideas quickly",
+      "Tech stack selection and architecture design",
+      "CI/CD pipeline setup and deployment",
+      "End-to-end testing before launch",
+    ],
   },
   {
     icon: Zap,
     title: "Automation",
-    description: "Smart workflows and integrations that save time and eliminate repetitive tasks.",
+    description: [
+      "Smart workflows and integrations",
+      "Eliminate repetitive tasks",
+      "Save time across your operations",
+      "Custom scripts and tooling for your stack",
+      "Webhook and event-driven automation",
+    ],
   },
   {
     icon: Database,
     title: "API Development",
-    description: "Robust, scalable APIs and backend systems that power your applications.",
+    description: [
+      "Robust, scalable APIs",
+      "Backend systems that power your applications",
+      "RESTful and GraphQL endpoint design",
+      "Auth, rate limiting, and security hardening",
+      "Full API documentation and versioning",
+    ],
   },
   {
     icon: Cog,
     title: "Tech Consulting",
-    description: "Strategic guidance on architecture, tooling, and technical decisions.",
+    description: [
+      "Strategic architecture guidance",
+      "Tooling and technical decisions",
+      "Code review and refactoring sessions",
+      "Performance profiling and optimisation",
+      "DevOps and infrastructure setup",
+    ],
+  },
+  {
+    icon: Wrench,
+    title: "Vibe Coded Off a Cliff?",
+    description: [
+      "Untangle messy, AI-generated code",
+      "Debug and stabilise broken builds",
+      "Get your project back on track",
+      "Refactor and reduce technical debt",
+      "Unit and integration test coverage",
+    ],
   },
 ];
 
@@ -66,9 +102,14 @@ export default function Features() {
                 <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-foreground/70 font-light leading-relaxed">
-                  {feature.description}
-                </p>
+                <ul className="space-y-2">
+                  {feature.description.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-foreground/70 font-light leading-relaxed">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
